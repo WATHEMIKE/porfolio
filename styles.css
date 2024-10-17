@@ -1,0 +1,321 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --accent-color: #feca57;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-color);
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Home Page */
+.home-page {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.home-page main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    color: white;
+}
+
+.glitch {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 var(--secondary-color),
+                 0.025em 0.05em 0 var(--primary-color);
+    animation: glitch 725ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.glitch span:first-child {
+    animation: glitch 500ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-0.05em, -0.025em);
+    opacity: 0.8;
+}
+
+.glitch span:last-child {
+    animation: glitch 375ms infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(0.05em, 0.025em);
+    opacity: 0.8;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 var(--secondary-color),
+                     0.025em 0.05em 0 var(--primary-color);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 var(--accent-color), -0.05em -0.025em 0 var(--secondary-color),
+                     0.025em 0.05em 0 var(--primary-color);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color), 
+                     0.025em 0.025em 0 var(--secondary-color),
+                     -0.05em -0.05em 0 var(--primary-color);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--accent-color),
+                     0.025em 0.025em 0 var(--secondary-color),
+                     -0.05em -0.05em 0 var(--primary-color);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 var(--accent-color), 0.05em 0 0 var(--secondary-color),
+                     0 -0.05em 0 var(--primary-color);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 var(--accent-color), 0.05em 0 0 var(--secondary-color),
+                     0 -0.05em 0 var(--primary-color);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 var(--accent-color),
+                     -0.025em -0.025em 0 var(--secondary-color),
+                     -0.025em -0.05em 0 var(--primary-color);
+    }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--text-color);
+    color: var(--accent-color);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    font-size: 14px;
+    padding: 10px 10px;
+}
+
+/* About Page */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style-type: none;
+}
+
+.skills-list li {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Gallery Page */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* School Page */
+.education-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.education-card {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.other {
+    flex: 1;
+}
+
+/* Location Page */
+.location-content {
+    text-align: center;
+}
+
+.map-container {
+    margin: 2rem 0;
+}
+
+.map-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.location-info {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content, .education-container {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
